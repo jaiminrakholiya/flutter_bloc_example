@@ -4,9 +4,11 @@ import 'package:flutter_bloc_all/bloc/todo/to_do_bloc.dart';
 import 'package:flutter_bloc_all/repository/favourite_repository.dart';
 import 'package:flutter_bloc_all/ui/favourite_app/favoruite_app_screen.dart';
 import 'package:flutter_bloc_all/ui/image_picker/image_picker_screen.dart';
+import 'package:flutter_bloc_all/ui/posts/posts_screen.dart';
 import 'package:flutter_bloc_all/utils/image_picker_utils.dart';
 import 'bloc/favourite_app/favourite_app_bloc.dart';
 import 'bloc/image_picker/image_picker_bloc.dart';
+import 'bloc/posts/posts_bloc.dart';
 import 'bloc/switch_example/switch_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'ui/switch_example/switch_example_screen.dart';
@@ -28,6 +30,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => ImagePickerBloc(ImagePickerUtils())),
         BlocProvider(create: (_) => ToDoBloc()),
         BlocProvider(create: (_) => FavouriteBloc(FavouriteRepositoty())),
+        BlocProvider(create: (_) => PostBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -35,7 +38,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
           useMaterial3: true,
         ),
-        home: FavoruiteAppScreen(),
+        home: PostsScreen(),
       ),
     );
   }
