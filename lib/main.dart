@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc_all/bloc/counter/counter_bloc.dart';
 import 'package:flutter_bloc_all/bloc/todo/to_do_bloc.dart';
 import 'package:flutter_bloc_all/repository/favourite_repository.dart';
+import 'package:flutter_bloc_all/ui/counter/couter_screen.dart';
 import 'package:flutter_bloc_all/ui/favourite_app/favoruite_app_screen.dart';
 import 'package:flutter_bloc_all/ui/image_picker/image_picker_screen.dart';
+import 'package:flutter_bloc_all/ui/login/login_screen.dart';
 import 'package:flutter_bloc_all/ui/posts/posts_screen.dart';
 import 'package:flutter_bloc_all/utils/image_picker_utils.dart';
 import 'bloc/favourite_app/favourite_app_bloc.dart';
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => CounterBloc()),
+        // BlocProvider(create: (_) => CounterBloc()),
         BlocProvider(create: (_) => SwitchBloc()),
         BlocProvider(create: (_) => ImagePickerBloc(ImagePickerUtils())),
         BlocProvider(create: (_) => ToDoBloc()),
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
           useMaterial3: true,
         ),
-        home: PostsScreen(),
+        home: LoginScreen(),
       ),
     );
   }
